@@ -1,0 +1,8 @@
+.error {
+    background: #E3000E !important;
+    color: #fff !important;
+}
+
+.mat-dialog-container {
+    padding: 0 !important;
+}

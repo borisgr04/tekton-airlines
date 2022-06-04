@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-content>
+    <form id="contactForm" [formGroup]="formGroup"  (ngSubmit)="submit()" fxLayout="column">
+     <mat-form-field>
+      <input matInput placeholder="Nombre" class="form-control"  
+        name="nombre" formControlName="nombre" 
+        [patterns]="customPatterns" mask="z*">
+     </mat-form-field>
+    
+    <mat-form-field>
+      <input type="text" matInput placeholder="Apellido" class="form-control"      
+        name="apellido" formControlName="apellido"
+        [patterns]="customPatterns" mask="z*">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Nacionalidad" class="form-control"   
+        name="nacionalidad" formControlName="nacionalidad"
+        mask="S*">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Tipo de documento</mat-label>
+      <mat-select name="tipoDocumento" formControlName="tipoDocumento">
+        <mat-option *ngFor="let item of tiposDocumento" [value]="item.value">
+          {{item.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Número de documento" class="form-control" 
+        name="numeroDocumento" formControlName="numeroDocumento" 
+        [mask]="mascaraNumeroDocumento" [maxLength]="longitudNumeroDocumento">
+    </mat-form-field>
+
+   
+
+    <button id="btnSubmit" mat-raised-button type="submit" color="primary">Guardar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
